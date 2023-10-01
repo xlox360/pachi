@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click</title>
+    <!-- Include the Font Awesome CSS link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Link to the custom font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap">
+    <style>
+        /* CSS for centering the button and styling it */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333; /* Gray-black background color for the entire page */
+        }
+
+        .click-button {
+            padding: 30px 60px; /* Increased padding for oblong shape */
+            color: white;
+            border: none;
+            cursor: pointer;
+            background-color: transparent; /* Transparent background color */
+            background-image: url('oks.jpg'); /* Initial background image */
+            background-size: cover; /* Set the image dimensions */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-position: center center; /* Center the background image */
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease; /* Smooth animation */
+            overflow: hidden; /* Hide any overflow from the image */
+            border-radius: 15px; /* Rounded corners for the button */
+        }
+
+        .click-button .fa-code {
+            font-size: 80px;
+            color: #4d9aff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease; /* Smooth icon animation */
+        }
+
+        /* Updated text to just "Read" */
+        .click-button span {
+            display: block;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* One-paragraph message */
+        .message {
+            display: none;
+            text-align: center;
+            background-image: url('yeah.jpg'); /* Set the background image for the message */
+            background-size: 100% auto; /* Enlarge the image to the fullest width, maintain aspect ratio */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-position: center center; /* Center the background image */
+            color: #fff; /* Updated text color to white */
+            border-radius: 15px; /* Apply an oblong radius */
+            padding: 20px; /* Padding for the message */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%; /* Set the maximum width for the message */
+        }
+
+        /* Animation on click */
+        .click-button.clicked {
+            background-color: #3498db; /* Change background color */
+        }
+
+        /* Use the specified custom font ("Dancing Script") for the text starting from "So, I love you..." */
+        .message p {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+<body>
+    <!-- Use the new icon for the button -->
+    <button id="clickButton" class="click-button"><i class="fa-solid fa-file-code fa-fade"></i><span>Read</span></button>
+
+    <div class="message">
+        <h1 style="color: #fff;">Happy Monthsary!</h1>
+        <p>
+            <span style="font-family: 'Dancing Script', cursive;">So, I love you. I love you because you always listen to the things I say and you always understand me. Perhaps it just happens that you need to deal with my personality and useless desires every day. I love you. I sincerely want you to take care of yourself every day, and you are special to me, the only person I want to spend the rest of my life with. Sorry for being annoying day to day hehe. Don't overexhaust yourself too much, take a rest often. Iloveyousomuch.</span>
+        </p>
+    </div>
+
+    <script>
+        // JavaScript to handle the button click and show the message
+        const clickButton = document.getElementById('clickButton');
+        const message = document.querySelector('.message');
+
+        clickButton.addEventListener('click', function() {
+            // Show the message and hide the button
+            clickButton.style.display = 'none';
+            message.style.display = 'block';
+            clickButton.classList.add('clicked'); // Add a class for the click animation
+        });
+    </script>
+</body>
+</html>
